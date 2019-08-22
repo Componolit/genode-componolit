@@ -1,0 +1,36 @@
+build "core init timer gneiss/test/timer"
+
+create_boot_directory
+
+install_config {
+	<config>
+		<parent-provides>
+			<service name="LOG"/>
+			<service name="PD"/>
+			<service name="CPU"/>
+			<service name="ROM"/>
+		</parent-provides>
+		<default-route>
+			<any-service> <parent/> <any-child/> </any-service>
+		</default-route>
+		<default caps="100"/>
+
+                <start name="timer">
+                    <resource name="RAM" quantum="1M"/>
+                    <provides>
+                        <service name="Timer"/>
+                    </provides>
+                </start>
+
+		<start name="test-gneiss_timer">
+                    <resource name="RAM" quantum="2M"/>
+		</start>
+	</config>
+}
+
+build_boot_image "core ld.lib.so timer spark.lib.so gneiss.lib.so init test-gneiss_timer"
+
+append qemu_args "-nographic "
+append xen_args  { sdl="0" }
+
+run_genode_until "exited with exit value 0.*\n" 20

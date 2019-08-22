@@ -1,0 +1,35 @@
+build "core init gneiss/test/rom"
+
+create_boot_directory
+
+install_config {
+	<config>
+		<parent-provides>
+			<service name="LOG"/>
+			<service name="PD"/>
+			<service name="CPU"/>
+			<service name="ROM"/>
+		</parent-provides>
+		<default-route>
+			<any-service> <parent/> </any-service>
+		</default-route>
+		<default caps="50"/>
+		<start name="test-gneiss_rom" caps="100">
+			<resource name="RAM" quantum="2M"/>
+                        <config><raw>Example</raw></config>
+		</start>
+	</config>
+}
+
+build_boot_image "core ld.lib.so spark.lib.so gneiss.lib.so init test-gneiss_rom"
+
+append qemu_args "-nographic "
+append xen_args  { sdl="0" }
+
+run_genode_until "Log session configured with label: Example.*\n" 10
+
+grep_output {\[init -\> test-gneiss_rom}
+
+compare_output_to {
+[init -> test-gneiss_rom -> Example] Log session configured with label: Example
+}
