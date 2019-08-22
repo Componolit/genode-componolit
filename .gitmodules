@@ -1,0 +1,3 @@
+[submodule "modules/gneiss"]
+	path = modules/gneiss
+	url = https://github.com/Componolit/gneiss.git
