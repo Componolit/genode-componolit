@@ -1,3 +1,6 @@
 [submodule "modules/gneiss"]
 	path = modules/gneiss
 	url = https://github.com/Componolit/gneiss.git
+[submodule "modules/gravel"]
+	path = modules/gravel
+	url = git@github.com:Componolit/gravel.git
