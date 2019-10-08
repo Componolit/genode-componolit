@@ -1,5 +1,5 @@
 
-GNEISS_INC_DIR = $(REP_DIR)/modules/gneiss/src
+GNEISS_INC_DIR = $(call select_from_repositories,modules/gneiss/src)
 GNEISS_BLOCK_INC_DIR = $(GNEISS_INC_DIR)/block
 GNEISS_LOG_INC_DIR = $(GNEISS_INC_DIR)/log
 GNEISS_TIMER_INC_DIR = $(GNEISS_INC_DIR)/timer
