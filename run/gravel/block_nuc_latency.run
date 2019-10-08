@@ -8,7 +8,9 @@ set build_components {
     server/part_block
     server/rump_fs
     server/fs_log
+    server/log_tee
     gravel/app/block_latency
+    app/log_core
 }
 
 source ${genode_dir}/repos/base/run/platform_drv.inc
@@ -78,7 +80,6 @@ append config {
             <policy label_prefix="rump_fs" partition="2" writeable="yes"/>
         </config>
         <route>
-            <service name="LOG"><child name="vga_log_drv"/></service>
             <service name="Block"><child name="usb_drv"/></service>
             <any-service><parent/><any-child/></any-service>
         </route>
@@ -93,7 +94,6 @@ append config {
             <policy label_prefix="fs_log" root="/" writeable="yes"/>
         </config>
         <route>
-            <service name="LOG"><child name="vga_log_drv"/></service>
             <service name="Block"><child name="part_block"/></service>
             <any-service><parent/><any-child/></any-service>
         </route>
@@ -106,6 +106,8 @@ append config {
         </provides>
         <config>
             <policy label="block-test-latency -> XML"/>
+            <policy label="log_core -> log"/>
+            <policy label_prefix="log_tee ->"/>
         </config>
     </start>
 
@@ -125,8 +127,28 @@ append config {
             <report ports="yes"/>
             <policy label_prefix="block-test-latency" device="0" writeable="yes"/>
         </config>
+    </start>
+
+    <start name="log_core">
+        <resource name="RAM" quantum="16M"/>
+        <config period_ms="2000"/>
         <route>
-            <service name="LOG"><child name="vga_log_drv"/></service>
+            <service name="ROM" unscoped_label="log_core"><parent/></service>
+            <service name="ROM" unscoped_label="ls.lib.so"><parent/></service>
+            <service name="ROM" label="log"><parent label="core_log"/></service>
+            <service name="LOG" label="log"><child name="log_tee"/></service>
+            <any-service><parent/><any-child/></any-service>
+        </route>
+    </start>
+
+    <start name="log_tee">
+        <resource name="RAM" quantum="4M"/>
+        <provides>
+            <service name="LOG"/>
+        </provides>
+        <route>
+            <service name="LOG" label_prefix="log_core ->"><child name="vga_log_drv"/></service>
+            <service name="LOG"><child name="fs_log"/></service>
             <any-service><parent/><any-child/></any-service>
         </route>
     </start>
@@ -151,6 +173,8 @@ set boot_modules {
     fs_log
     ahci_drv
     block-test-latency
+    log_core
+    log_tee
 }
 
 append_platform_drv_boot_modules
