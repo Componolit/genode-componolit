@@ -21,7 +21,8 @@ SRC_ADS += cxx.ads \
 	   cxx-timer-client.ads \
 	   cxx-configuration.ads \
 	   cxx-configuration-client.ads \
-	   componolit-gneiss-internal-rom.ads
+	   componolit-gneiss-internal-rom.ads \
+	   componolit-gneiss-containers.ads
 
 SRC_ADB += cxx-block-dispatcher.adb \
 	   componolit-gneiss-block.adb \
@@ -35,7 +36,8 @@ SRC_ADB += cxx-block-dispatcher.adb \
 	   componolit-gneiss-rom.adb \
 	   componolit-gneiss-rom-client.adb \
 	   componolit-gneiss-strings.adb \
-	   componolit-gneiss-strings_generic.adb
+	   componolit-gneiss-strings_generic.adb \
+	   componolit-gneiss-containers-fifo.adb
 
 SRC_CC += cai_factory.cc \
 	  block_client.cc \
@@ -66,6 +68,7 @@ vpath cxx-timer-client.ads $(GNEISS_TIMER_INC_DIR)/client/genode
 vpath cxx-configuration.ads $(GNEISS_CONFIG_DIR)/client/genode
 vpath cxx-configuration-client.ads $(GNEISS_CONFIG_DIR)/client/genode
 vpath componolit-gneiss-internal-rom.ads $(GNEISS_CONFIG_DIR)/genode
+vpath componolit-gneiss-containers.ads $(GNEISS_COMMON_DIR)
 vpath cxx-block-dispatcher.adb $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath componolit-gneiss-block.adb $(GNEISS_BLOCK_INC_DIR)/genode
 vpath componolit-gneiss-block-client.adb $(GNEISS_BLOCK_INC_DIR)/client/genode
@@ -80,6 +83,7 @@ vpath componolit-gneiss-rom.adb $(GNEISS_CONFIG_DIR)/genode
 vpath componolit-gneiss-rom-client.adb $(GNEISS_CONFIG_DIR)/client/genode
 vpath componolit-gneiss-strings.adb $(GNEISS_COMMON_DIR)
 vpath componolit-gneiss-strings_generic.adb $(GNEISS_COMMON_DIR)
+vpath componolit-gneiss-containers-fifo.adb $(GNEISS_COMMON_DIR)
 vpath cai_factory.cc $(GNEISS_PLATFORM_DIR)
 vpath block_client.cc $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath block_dispatcher.cc $(GNEISS_BLOCK_INC_DIR)/server/genode
