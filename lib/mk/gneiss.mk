@@ -2,6 +2,7 @@
 include $(REP_DIR)/lib/import/import-gneiss.mk
 
 CC_CXX_OPT += -Wno-attributes
+CC_ADA_WARN_STRICT ?= -gnatwe -gnatyydSuxM120
 
 SRC_ADS += cxx.ads \
 	   cxx-block.ads \
