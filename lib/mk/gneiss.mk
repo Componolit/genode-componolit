@@ -38,7 +38,8 @@ SRC_ADB += cxx-block-dispatcher.adb \
 	   componolit-gneiss-rom-client.adb \
 	   componolit-gneiss-strings.adb \
 	   componolit-gneiss-strings_generic.adb \
-	   componolit-gneiss-containers-fifo.adb
+	   componolit-gneiss-containers-fifo.adb \
+	   componolit-gneiss-slicer.adb
 
 SRC_CC += cai_factory.cc \
 	  block_client.cc \
@@ -85,6 +86,7 @@ vpath componolit-gneiss-rom-client.adb $(GNEISS_CONFIG_DIR)/client/genode
 vpath componolit-gneiss-strings.adb $(GNEISS_COMMON_DIR)
 vpath componolit-gneiss-strings_generic.adb $(GNEISS_COMMON_DIR)
 vpath componolit-gneiss-containers-fifo.adb $(GNEISS_COMMON_DIR)
+vpath componolit-gneiss-slicer.adb $(GNEISS_COMMON_DIR)
 vpath cai_factory.cc $(GNEISS_PLATFORM_DIR)
 vpath block_client.cc $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath block_dispatcher.cc $(GNEISS_BLOCK_INC_DIR)/server/genode
