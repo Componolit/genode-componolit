@@ -30,7 +30,7 @@ INC_DIR += $(GNEISS_INC_DIR) \
 	   $(GNEISS_CONFIG_DIR)/client/genode
 
 SRC_CC += cai_main.cc
-SRC_ADB += componolit-gneiss-component.adb
+SRC_ADB += gneiss-component.adb
 
 vpath cai_main.cc $(GNEISS_PLATFORM_DIR)
-vpath componolit-gneiss-component.adb $(GNEISS_PLATFORM_DIR)
+vpath gneiss-component.adb $(GNEISS_PLATFORM_DIR)

@@ -13,7 +13,7 @@ install_config {
 		<default-route>
 			<any-service> <parent/> </any-service>
 		</default-route>
-		<default caps="50"/>
+		<default caps="60"/>
 		<start name="test-gneiss_rom" caps="100">
 			<resource name="RAM" quantum="2M"/>
                         <config><raw>Example</raw></config>
@@ -21,7 +21,7 @@ install_config {
 	</config>
 }
 
-build_boot_image "core ld.lib.so spark.lib.so gneiss.lib.so init test-gneiss_rom"
+build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init test-gneiss_rom"
 
 append qemu_args "-nographic "
 append xen_args  { sdl="0" }
