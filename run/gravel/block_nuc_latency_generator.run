@@ -181,6 +181,7 @@ set boot_modules {
     core init
     ld.lib.so
     spark.lib.so
+    basalt.lib.so
     gneiss.lib.so
     libsparkcrypto.lib.so
     timer

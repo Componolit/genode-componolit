@@ -162,6 +162,7 @@ set boot_modules {
     core init
     ld.lib.so
     spark.lib.so
+    basalt.lib.so
     gneiss.lib.so
     timer
     vga_log_drv
