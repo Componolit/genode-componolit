@@ -11,18 +11,16 @@ SRC_ADS += cxx.ads \
 	   cxx-genode.ads \
 	   cxx-log.ads \
 	   cxx-log-client.ads \
-	   gneiss-internal.ads \
-	   gneiss-internal-block.ads \
-	   gneiss-internal-log.ads \
+	   gneiss_internal.ads \
+	   gneiss_internal-block.ads \
+	   gneiss_internal-log.ads \
 	   gneiss.ads \
-	   gneiss-types.ads \
-	   gneiss-internal-types.ads \
-	   gneiss-internal-timer.ads \
+	   gneiss_internal-timer.ads \
 	   cxx-timer.ads \
 	   cxx-timer-client.ads \
 	   cxx-configuration.ads \
 	   cxx-configuration-client.ads \
-	   gneiss-internal-rom.ads
+	   gneiss_internal-rom.ads
 
 SRC_ADB += cxx-block-dispatcher.adb \
 	   gneiss-block.adb \
@@ -53,18 +51,16 @@ vpath cxx-block-server.ads $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath cxx-genode.ads $(GNEISS_PLATFORM_DIR)
 vpath cxx-log.ads $(GNEISS_LOG_INC_DIR)/genode
 vpath cxx-log-client.ads $(GNEISS_LOG_INC_DIR)/client/genode
-vpath gneiss-internal.ads $(GNEISS_PLATFORM_DIR)
-vpath gneiss-internal-block.ads $(GNEISS_BLOCK_INC_DIR)/genode
-vpath gneiss-internal-log.ads $(GNEISS_LOG_INC_DIR)/genode
+vpath gneiss_internal.ads $(GNEISS_PLATFORM_DIR)
+vpath gneiss_internal-block.ads $(GNEISS_BLOCK_INC_DIR)/genode
+vpath gneiss_internal-log.ads $(GNEISS_LOG_INC_DIR)/genode
 vpath gneiss.ads $(GNEISS_INC_DIR)
-vpath gneiss-types.ads $(GNEISS_INC_DIR)
-vpath gneiss-internal-types.ads $(GNEISS_PLATFORM_DIR)
-vpath gneiss-internal-timer.ads $(GNEISS_TIMER_INC_DIR)/genode
+vpath gneiss_internal-timer.ads $(GNEISS_TIMER_INC_DIR)/genode
 vpath cxx-timer.ads $(GNEISS_TIMER_INC_DIR)/genode
 vpath cxx-timer-client.ads $(GNEISS_TIMER_INC_DIR)/client/genode
 vpath cxx-configuration.ads $(GNEISS_CONFIG_DIR)/client/genode
 vpath cxx-configuration-client.ads $(GNEISS_CONFIG_DIR)/client/genode
-vpath gneiss-internal-rom.ads $(GNEISS_CONFIG_DIR)/genode
+vpath gneiss_internal-rom.ads $(GNEISS_CONFIG_DIR)/genode
 vpath cxx-block-dispatcher.adb $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath gneiss-block.adb $(GNEISS_BLOCK_INC_DIR)/genode
 vpath gneiss-block-client.adb $(GNEISS_BLOCK_INC_DIR)/client/genode
