@@ -28,7 +28,7 @@ append xen_args  { sdl="0" }
 
 run_genode_until ".*exited with exit value 0.*\n" 20
 
-grep_output {\[init -\> test-hello_world}
+grep_output {\[init -\> test-hello_world -\> log_hello_world}
 
 compare_output_to {
 [init -> test-hello_world -> log_hello_world] Hello World!

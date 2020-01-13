@@ -26,10 +26,10 @@ build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init t
 append qemu_args "-nographic "
 append xen_args  { sdl="0" }
 
-run_genode_until "Log session configured with label: Example.*\n" 10
+run_genode_until "Log session configured.*\n" 10
 
-grep_output {\[init -\> test-gneiss_rom}
+grep_output {\[init -\> test-gneiss_rom -\> Example}
 
 compare_output_to {
-[init -> test-gneiss_rom -> Example] Log session configured with label: Example
+[init -> test-gneiss_rom -> Example] Log session configured
 }
