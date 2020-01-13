@@ -11,6 +11,7 @@ SRC_ADS += cxx.ads \
 	   cxx-genode.ads \
 	   cxx-log.ads \
 	   cxx-log-client.ads \
+	   gneiss-log-server.ads \
 	   gneiss_internal.ads \
 	   gneiss_internal-block.ads \
 	   gneiss_internal-log.ads \
@@ -29,6 +30,7 @@ SRC_ADB += cxx-block-dispatcher.adb \
 	   gneiss-block-dispatcher.adb \
 	   gneiss-log.adb \
 	   gneiss-log-client.adb \
+	   gneiss-log-dispatcher.adb \
 	   gneiss-timer.adb \
 	   gneiss-timer-client.adb \
 	   gneiss-rom.adb \
@@ -39,6 +41,8 @@ SRC_CC += cai_factory.cc \
 	  block_dispatcher.cc \
 	  block_server.cc \
 	  log_client.cc \
+	  gneiss_log_server.cc \
+	  gneiss_log_dispatcher.cc \
 	  timer_client.cc \
 	  configuration_client.cc
 
@@ -51,6 +55,7 @@ vpath cxx-block-server.ads $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath cxx-genode.ads $(GNEISS_PLATFORM_DIR)
 vpath cxx-log.ads $(GNEISS_LOG_INC_DIR)/genode
 vpath cxx-log-client.ads $(GNEISS_LOG_INC_DIR)/client/genode
+vpath gneiss-log-server.ads $(GNEISS_LOG_INC_DIR)/server
 vpath gneiss_internal.ads $(GNEISS_PLATFORM_DIR)
 vpath gneiss_internal-block.ads $(GNEISS_BLOCK_INC_DIR)/genode
 vpath gneiss_internal-log.ads $(GNEISS_LOG_INC_DIR)/genode
@@ -69,6 +74,7 @@ vpath gneiss-block-dispatcher.adb $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath gneiss-block-util.adb $(GNEISS_BLOCK_INC_DIR)/genode
 vpath gneiss-log.adb $(GNEISS_LOG_INC_DIR)/genode
 vpath gneiss-log-client.adb $(GNEISS_LOG_INC_DIR)/client/genode
+vpath gneiss-log-dispatcher.adb $(GNEISS_LOG_INC_DIR)/server/genode
 vpath gneiss-timer.adb $(GNEISS_TIMER_INC_DIR)/genode
 vpath gneiss-timer-client.adb $(GNEISS_TIMER_INC_DIR)/client/genode
 vpath gneiss-rom.adb $(GNEISS_CONFIG_DIR)/genode
@@ -78,6 +84,8 @@ vpath block_client.cc $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath block_dispatcher.cc $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath block_server.cc $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath log_client.cc $(GNEISS_LOG_INC_DIR)/client/genode
+vpath gneiss_log_server.cc $(GNEISS_LOG_INC_DIR)/server/genode
+vpath gneiss_log_dispatcher.cc $(GNEISS_LOG_INC_DIR)/server/genode
 vpath timer_client.cc $(GNEISS_TIMER_INC_DIR)/client/genode
 vpath configuration_client.cc $(GNEISS_CONFIG_DIR)/client/genode
 

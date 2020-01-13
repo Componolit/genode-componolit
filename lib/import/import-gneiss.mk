@@ -20,6 +20,8 @@ INC_DIR += $(GNEISS_INC_DIR) \
 	   $(GNEISS_LOG_INC_DIR)/genode \
 	   $(GNEISS_LOG_INC_DIR)/client \
 	   $(GNEISS_LOG_INC_DIR)/client/genode \
+	   $(GNEISS_LOG_INC_DIR)/server \
+	   $(GNEISS_LOG_INC_DIR)/server/genode \
 	   $(GNEISS_TIMER_INC_DIR) \
 	   $(GNEISS_TIMER_INC_DIR)/genode \
 	   $(GNEISS_TIMER_INC_DIR)/client \
