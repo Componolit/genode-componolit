@@ -26,10 +26,10 @@ build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init t
 append qemu_args "-nographic "
 append xen_args  { sdl="0" }
 
-run_genode_until "Log session configured.*\n" 10
+run_genode_until "child \"test-gneiss_rom\" exited with exit value 0.*" 10
 
-grep_output {\[init -\> test-gneiss_rom -\> Example}
+grep_output {\[init -\> test-gneiss_rom -\> rom}
 
 compare_output_to {
-[init -> test-gneiss_rom -> Example] Log session configured
+[init -> test-gneiss_rom -> rom] Rom content: <config><raw>Example</raw></config>
 }
