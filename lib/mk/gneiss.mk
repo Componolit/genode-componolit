@@ -19,9 +19,7 @@ SRC_ADS += cxx.ads \
 	   gneiss_internal-timer.ads \
 	   cxx-timer.ads \
 	   cxx-timer-client.ads \
-	   cxx-configuration.ads \
-	   cxx-configuration-client.ads \
-	   gneiss_internal-rom.ads
+	   gneiss_internal-memory.ads
 
 SRC_ADB += cxx-block-dispatcher.adb \
 	   gneiss-block.adb \
@@ -33,8 +31,8 @@ SRC_ADB += cxx-block-dispatcher.adb \
 	   gneiss-log-dispatcher.adb \
 	   gneiss-timer.adb \
 	   gneiss-timer-client.adb \
-	   gneiss-rom.adb \
-	   gneiss-rom-client.adb
+	   gneiss-memory.adb \
+	   gneiss-memory-client.adb
 
 SRC_CC += cai_factory.cc \
 	  block_client.cc \
@@ -44,7 +42,7 @@ SRC_CC += cai_factory.cc \
 	  gneiss_log_server.cc \
 	  gneiss_log_dispatcher.cc \
 	  timer_client.cc \
-	  configuration_client.cc
+	  gneiss_memory_client.cc
 
 LIBS = base spark basalt
 
@@ -63,9 +61,7 @@ vpath gneiss.ads $(GNEISS_INC_DIR)
 vpath gneiss_internal-timer.ads $(GNEISS_TIMER_INC_DIR)/genode
 vpath cxx-timer.ads $(GNEISS_TIMER_INC_DIR)/genode
 vpath cxx-timer-client.ads $(GNEISS_TIMER_INC_DIR)/client/genode
-vpath cxx-configuration.ads $(GNEISS_CONFIG_DIR)/client/genode
-vpath cxx-configuration-client.ads $(GNEISS_CONFIG_DIR)/client/genode
-vpath gneiss_internal-rom.ads $(GNEISS_CONFIG_DIR)/genode
+vpath gneiss_internal-memory.ads $(GNEISS_MEMORY_DIR)/genode
 vpath cxx-block-dispatcher.adb $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath gneiss-block.adb $(GNEISS_BLOCK_INC_DIR)/genode
 vpath gneiss-block-client.adb $(GNEISS_BLOCK_INC_DIR)/client/genode
@@ -77,8 +73,8 @@ vpath gneiss-log-client.adb $(GNEISS_LOG_INC_DIR)/client/genode
 vpath gneiss-log-dispatcher.adb $(GNEISS_LOG_INC_DIR)/server/genode
 vpath gneiss-timer.adb $(GNEISS_TIMER_INC_DIR)/genode
 vpath gneiss-timer-client.adb $(GNEISS_TIMER_INC_DIR)/client/genode
-vpath gneiss-rom.adb $(GNEISS_CONFIG_DIR)/genode
-vpath gneiss-rom-client.adb $(GNEISS_CONFIG_DIR)/client/genode
+vpath gneiss-memory.adb $(GNEISS_MEMORY_DIR)/genode
+vpath gneiss-memory-client.adb $(GNEISS_MEMORY_DIR)/client/genode
 vpath cai_factory.cc $(GNEISS_PLATFORM_DIR)
 vpath block_client.cc $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath block_dispatcher.cc $(GNEISS_BLOCK_INC_DIR)/server/genode
@@ -87,6 +83,6 @@ vpath log_client.cc $(GNEISS_LOG_INC_DIR)/client/genode
 vpath gneiss_log_server.cc $(GNEISS_LOG_INC_DIR)/server/genode
 vpath gneiss_log_dispatcher.cc $(GNEISS_LOG_INC_DIR)/server/genode
 vpath timer_client.cc $(GNEISS_TIMER_INC_DIR)/client/genode
-vpath configuration_client.cc $(GNEISS_CONFIG_DIR)/client/genode
+vpath gneiss_memory_client.cc $(GNEISS_MEMORY_DIR)/client/genode
 
 SHARED_LIB = yes
