@@ -21,9 +21,10 @@ SRC_ADS += cxx.ads \
 	   cxx-timer-client.ads \
 	   gneiss_internal-rom.ads \
 	   gneiss_internal-memory.ads \
-	   genode.ads
+	   gneiss_internal-message.ads
 
-SRC_ADB += cxx-block-dispatcher.adb \
+SRC_ADB += genode.adb \
+	   cxx-block-dispatcher.adb \
 	   gneiss-block.adb \
 	   gneiss-block-client.adb \
 	   gneiss-block-server.adb \
@@ -38,7 +39,11 @@ SRC_ADB += cxx-block-dispatcher.adb \
 	   gneiss-memory.adb \
 	   gneiss-memory-client.adb \
 	   gneiss-memory-server.adb \
-	   gneiss-memory-dispatcher.adb
+	   gneiss-memory-dispatcher.adb \
+	   gneiss-message.adb \
+	   gneiss-message-client.adb \
+	   gneiss-message-server.adb \
+	   gneiss-message-dispatcher.adb
 
 SRC_CC += cai_factory.cc \
 	  block_client.cc \
@@ -51,7 +56,10 @@ SRC_CC += cai_factory.cc \
 	  gneiss_rom_client.cc \
 	  gneiss_memory_dispatcher.cc \
 	  gneiss_memory_server.cc \
-	  gneiss_memory_client.cc
+	  gneiss_memory_client.cc \
+	  gneiss_message_client.cc \
+	  gneiss_message_server.cc \
+	  gneiss_message_dispatcher.cc
 
 LIBS = base spark basalt
 
@@ -72,7 +80,8 @@ vpath cxx-timer.ads $(GNEISS_TIMER_INC_DIR)/genode
 vpath cxx-timer-client.ads $(GNEISS_TIMER_INC_DIR)/client/genode
 vpath gneiss_internal-rom.ads $(GNEISS_ROM_DIR)/genode
 vpath gneiss_internal-memory.ads $(GNEISS_MEMORY_DIR)/genode
-vpath genode.ads $(GNEISS_PLATFORM_DIR)
+vpath gneiss_internal-message.ads $(GNEISS_MESSAGE_DIR)/genode
+vpath genode.adb $(GNEISS_PLATFORM_DIR)
 vpath cxx-block-dispatcher.adb $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath gneiss-block.adb $(GNEISS_BLOCK_INC_DIR)/genode
 vpath gneiss-block-client.adb $(GNEISS_BLOCK_INC_DIR)/client/genode
@@ -90,6 +99,10 @@ vpath gneiss-memory.adb $(GNEISS_MEMORY_DIR)/genode
 vpath gneiss-memory-client.adb $(GNEISS_MEMORY_DIR)/client/genode
 vpath gneiss-memory-server.adb $(GNEISS_MEMORY_DIR)/server/genode
 vpath gneiss-memory-dispatcher.adb $(GNEISS_MEMORY_DIR)/server/genode
+vpath gneiss-message.adb $(GNEISS_MESSAGE_DIR)/genode
+vpath gneiss-message-client.adb $(GNEISS_MESSAGE_DIR)/client/genode
+vpath gneiss-message-server.adb $(GNEISS_MESSAGE_DIR)/server/genode
+vpath gneiss-message-dispatcher.adb $(GNEISS_MESSAGE_DIR)/server/genode
 vpath cai_factory.cc $(GNEISS_PLATFORM_DIR)
 vpath block_client.cc $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath block_dispatcher.cc $(GNEISS_BLOCK_INC_DIR)/server/genode
@@ -102,5 +115,8 @@ vpath gneiss_rom_client.cc $(GNEISS_ROM_DIR)/client/genode
 vpath gneiss_memory_dispatcher.cc $(GNEISS_MEMORY_DIR)/server/genode
 vpath gneiss_memory_server.cc $(GNEISS_MEMORY_DIR)/server/genode
 vpath gneiss_memory_client.cc $(GNEISS_MEMORY_DIR)/client/genode
+vpath gneiss_message_client.cc $(GNEISS_MESSAGE_DIR)/client/genode
+vpath gneiss_message_server.cc $(GNEISS_MESSAGE_DIR)/server/genode
+vpath gneiss_message_dispatcher.cc $(GNEISS_MESSAGE_DIR)/server/genode
 
 SHARED_LIB = yes

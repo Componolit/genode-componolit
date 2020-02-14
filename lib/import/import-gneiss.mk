@@ -6,6 +6,7 @@ GNEISS_TIMER_INC_DIR = $(GNEISS_INC_DIR)/timer
 GNEISS_PLATFORM_DIR = $(GNEISS_INC_DIR)/platform/genode
 GNEISS_ROM_DIR = $(GNEISS_INC_DIR)/rom
 GNEISS_MEMORY_DIR = $(GNEISS_INC_DIR)/memory
+GNEISS_MESSAGE_DIR = $(GNEISS_INC_DIR)/message
 GNEISS_COMMON_DIR = $(GNEISS_INC_DIR)/common
 
 INC_DIR += $(GNEISS_INC_DIR) \
@@ -36,7 +37,13 @@ INC_DIR += $(GNEISS_INC_DIR) \
 	   $(GNEISS_MEMORY_DIR)/client \
 	   $(GNEISS_MEMORY_DIR)/client/genode \
 	   $(GNEISS_MEMORY_DIR)/server \
-	   $(GNEISS_MEMORY_DIR)/server/genode
+	   $(GNEISS_MEMORY_DIR)/server/genode \
+	   $(GNEISS_MESSAGE_DIR) \
+	   $(GNEISS_MESSAGE_DIR)/genode \
+	   $(GNEISS_MESSAGE_DIR)/client \
+	   $(GNEISS_MESSAGE_DIR)/client/genode \
+	   $(GNEISS_MESSAGE_DIR)/server \
+	   $(GNEISS_MESSAGE_DIR)/server/genode
 
 SRC_CC += cai_main.cc
 SRC_ADB += gneiss-component.adb
