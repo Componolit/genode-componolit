@@ -1,4 +1,4 @@
-build "core init gneiss/test/memory_client gneiss/test/memory_server"
+build "core init gneiss/test/message_client gneiss/test/message_server"
 
 create_boot_directory
 
@@ -14,26 +14,27 @@ install_config {
 			<any-service> <parent/> <any-child/> </any-service>
 		</default-route>
 		<default caps="100"/>
-                <start name="test-gneiss_memory_client">
+                <start name="test-gneiss_message_client">
                     <resource name="RAM" quantum="10M"/>
                 </start>
-                <start name="test-gneiss_memory_server">
+                <start name="test-gneiss_message_server">
                     <resource name="RAM" quantum="10M"/>
                     <provides>
-                        <service name="Gneiss_Memory"/>
+                        <service name="Gneiss_Message"/>
                     </provides>
                 </start>
 	</config>
 }
 
-build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init test-gneiss_memory_client test-gneiss_memory_server"
+build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init test-gneiss_message_client test-gneiss_message_server"
 
 append qemu_args "-nographic "
 append xen_args  { sdl="0" }
 
 run_genode_until ".*exited with exit value 0.*\n" 20
-grep_output {\[init -\> test-gneiss_memory_client -\> log_memory}
+grep_output {\[init -\> test-gneiss_message_client -\> log_message}
 
 compare_output_to {
-[init -> test-gneiss_memory_client -> log_memory] Data: Hello World!
+[init -> test-gneiss_message_client -> log_message] Sending: Hello World!
+[init -> test-gneiss_message_client -> log_message] Received: Hello World!
 }
