@@ -1,4 +1,4 @@
-build "core init gravel/server/parpen"
+build "core init gravel/server/parpen gravel/test/parpen"
 
 create_boot_directory
 
@@ -11,16 +11,22 @@ install_config {
             <service name="ROM"/>
         </parent-provides>
         <default-route>
-            <any-service> <parent/> </any-service>
+            <any-service> <parent/> <any-child/> </any-service>
         </default-route>
-        <default caps="60"/>
+        <default caps="100"/>
         <start name="parpen">
+            <resource name="RAM" quantum="2M"/>
+            <provides>
+                <service name="Gneiss_Message"/>
+            </provides>
+        </start>
+        <start name="parpen-test-client">
             <resource name="RAM" quantum="2M"/>
         </start>
     </config>
 }
 
-build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init parpen"
+build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init parpen parpen-test-client"
 
 append qemu_args "-nographic "
 append xen_args  { sdl="0" }
