@@ -1,4 +1,4 @@
-build "core init gravel/server/parpen gravel/test/parpen"
+build "core init gravel/server/parpen gravel/test/parpen_no_mem_session"
 
 create_boot_directory
 
@@ -21,15 +21,15 @@ install_config {
                 <service name="Gneiss_Memory"/>
             </provides>
         </start>
-        <start name="parpen-test-client">
+        <start name="parpen_test_no_mem_session">
             <resource name="RAM" quantum="2M"/>
         </start>
     </config>
 }
 
-build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init parpen parpen-test-client"
+build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init parpen parpen_test_no_mem_session"
 
 append qemu_args "-nographic "
 append xen_args  { sdl="0" }
 
-run_genode_until ".*exited with exit value 0.*\n" 20
+run_genode_until ".* child \"parpen_test_no_mem_session\" exited with exit value 0" 20
