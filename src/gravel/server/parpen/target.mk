@@ -6,6 +6,7 @@ SRC_ADB += \
 	parpen-generic_types.adb \
 	parpen-protocol.adb \
 	parpen-protocol-generic_label.adb \
+	parpen-protocol-generic_request.adb \
 	parpen-protocol-generic_reply.adb \
 
 SRC_ADS += \
