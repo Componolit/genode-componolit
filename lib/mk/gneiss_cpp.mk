@@ -4,7 +4,7 @@ include $(REP_DIR)/lib/import/import-gneiss_cpp.mk
 CC_CXX_OPT += -Wno-attributes
 
 SRC_CC += cai_factory.cc \
-	  log_client.cc \
+	  gneiss_log_client.cc \
 	  gneiss_log_server.cc \
 	  gneiss_log_dispatcher.cc \
 	  timer_client.cc \
@@ -19,7 +19,7 @@ SRC_CC += cai_factory.cc \
 LIBS = base
 
 vpath cai_factory.cc $(GNEISS_PLATFORM_DIR)
-vpath log_client.cc $(GNEISS_LOG_INC_DIR)/client/genode
+vpath gneiss_log_client.cc $(GNEISS_LOG_INC_DIR)/client/genode
 vpath gneiss_log_server.cc $(GNEISS_LOG_INC_DIR)/server/genode
 vpath gneiss_log_dispatcher.cc $(GNEISS_LOG_INC_DIR)/server/genode
 vpath timer_client.cc $(GNEISS_TIMER_INC_DIR)/client/genode

@@ -9,8 +9,6 @@ SRC_ADS += cxx.ads \
 	   cxx-block-client.ads \
 	   cxx-block-server.ads \
 	   cxx-genode.ads \
-	   cxx-log.ads \
-	   cxx-log-client.ads \
 	   gneiss-log-server.ads \
 	   gneiss_internal.ads \
 	   gneiss_internal-block.ads \
@@ -49,7 +47,7 @@ SRC_CC += cai_factory.cc \
 	  block_client.cc \
 	  block_dispatcher.cc \
 	  block_server.cc \
-	  log_client.cc \
+	  gneiss_log_client.cc \
 	  gneiss_log_server.cc \
 	  gneiss_log_dispatcher.cc \
 	  timer_client.cc \
@@ -68,8 +66,6 @@ vpath cxx-block.ads $(GNEISS_BLOCK_INC_DIR)/genode
 vpath cxx-block-client.ads $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath cxx-block-server.ads $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath cxx-genode.ads $(GNEISS_PLATFORM_DIR)
-vpath cxx-log.ads $(GNEISS_LOG_INC_DIR)/genode
-vpath cxx-log-client.ads $(GNEISS_LOG_INC_DIR)/client/genode
 vpath gneiss-log-server.ads $(GNEISS_LOG_INC_DIR)/server
 vpath gneiss_internal.ads $(GNEISS_PLATFORM_DIR)
 vpath gneiss_internal-block.ads $(GNEISS_BLOCK_INC_DIR)/genode
@@ -107,7 +103,7 @@ vpath cai_factory.cc $(GNEISS_PLATFORM_DIR)
 vpath block_client.cc $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath block_dispatcher.cc $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath block_server.cc $(GNEISS_BLOCK_INC_DIR)/server/genode
-vpath log_client.cc $(GNEISS_LOG_INC_DIR)/client/genode
+vpath gneiss_log_client.cc $(GNEISS_LOG_INC_DIR)/client/genode
 vpath gneiss_log_server.cc $(GNEISS_LOG_INC_DIR)/server/genode
 vpath gneiss_log_dispatcher.cc $(GNEISS_LOG_INC_DIR)/server/genode
 vpath timer_client.cc $(GNEISS_TIMER_INC_DIR)/client/genode
