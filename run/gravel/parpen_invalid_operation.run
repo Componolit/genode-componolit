@@ -27,7 +27,7 @@ install_config {
     </config>
 }
 
-build_boot_image "core ld.lib.so spark.lib.so basalt.lib.so gneiss.lib.so init parpen parpen_test_invalid_operation"
+build_boot_image "core ld.lib.so spark.lib.so libsparkcrypto.lib.so basalt.lib.so gneiss.lib.so init parpen parpen_test_invalid_operation"
 
 append qemu_args "-nographic "
 append xen_args  { sdl="0" }

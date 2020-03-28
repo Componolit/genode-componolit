@@ -1,4 +1,4 @@
-TARGET := parpen_test_invalid_operation
+TARGET := parpen_test_name_service
 
 SRC_ADB := \
 	component.adb \
@@ -6,7 +6,9 @@ SRC_ADB := \
 	parpen-protocol-generic_request.adb \
 	parpen-protocol-generic_reply.adb \
 	parpen-protocol-generic_label.adb \
-	parpen-container.adb
+	parpen-container.adb \
+	parpen-protocol-generic_contains.adb \
+	parpen-protocol-generic_transaction.adb
 
 SRC_ADS := \
 	parpen.ads \
@@ -18,7 +20,7 @@ INC_DIR := \
 	$(ADA_COMPONENTS_DIR)/common/parpen \
 	$(ADA_COMPONENTS_DIR)/common/parpen/generated \
 	$(ADA_COMPONENTS_DIR)/common/parpen/test \
-	$(ADA_COMPONENTS_DIR)/common/parpen/test/invalid_operation \
+	$(ADA_COMPONENTS_DIR)/common/parpen/test/name_service \
 
 LIBS := base spark gneiss basalt
 CC_ADA_WARN_STRICT ?=
@@ -28,6 +30,6 @@ vpath %.ads \
 	$(ADA_COMPONENTS_DIR)/common/parpen/generated
 
 vpath %.adb \
-	$(ADA_COMPONENTS_DIR)/common/parpen/test/invalid_operation \
+	$(ADA_COMPONENTS_DIR)/common/parpen/test/name_service \
 	$(ADA_COMPONENTS_DIR)/common/parpen/generated \
 	$(ADA_COMPONENTS_DIR)/common/parpen/ \

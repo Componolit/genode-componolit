@@ -5,7 +5,7 @@ SRC_ADB := \
 	parpen-generic_types.adb \
 	parpen-protocol-generic_reply.adb \
 	parpen-protocol-generic_label.adb \
-	rflx_container.adb
+	parpen-container.adb
 
 SRC_ADS := \
 	parpen.ads \
