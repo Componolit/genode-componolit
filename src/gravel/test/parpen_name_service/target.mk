@@ -4,7 +4,6 @@ SRC_ADB := \
 	component.adb \
 	parpen-generic_types.adb \
 	parpen-protocol-generic_request.adb \
-	parpen-protocol-generic_reply.adb \
 	parpen-protocol-generic_label.adb \
 	parpen-container.adb \
 	parpen-protocol-generic_contains.adb \

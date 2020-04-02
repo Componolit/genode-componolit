@@ -14,8 +14,9 @@ SRC_ADB += \
 	parpen-namedb.adb \
 	parpen-protocol-generic_label.adb \
 	parpen-protocol-generic_offsets.adb \
-	parpen-protocol-generic_reply.adb \
 	parpen-protocol-generic_request.adb \
+	parpen-protocol-generic_contains.adb \
+	parpen-protocol-generic_transaction.adb \
 	parpen-protocol.adb \
 	parpen-resolve.adb \
 	parpen-service_manager.adb \

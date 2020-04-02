@@ -3,8 +3,8 @@ TARGET := parpen_test_no_mem_session
 SRC_ADB := \
 	component.adb \
 	parpen-generic_types.adb \
-	parpen-protocol-generic_reply.adb \
 	parpen-protocol-generic_label.adb \
+	parpen-protocol-generic_request.adb \
 	parpen-container.adb
 
 SRC_ADS := \
