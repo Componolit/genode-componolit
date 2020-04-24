@@ -10,7 +10,6 @@ SRC_ADS += cxx.ads \
 	   cxx-block-server.ads \
 	   cxx-genode.ads \
 	   gneiss-log-server.ads \
-	   gneiss_internal.ads \
 	   gneiss_internal-block.ads \
 	   gneiss_internal-log.ads \
 	   gneiss.ads \
@@ -23,6 +22,7 @@ SRC_ADS += cxx.ads \
 
 SRC_ADB += genode.adb \
 	   cxx-block-dispatcher.adb \
+	   gneiss_internal.adb \
 	   gneiss-block.adb \
 	   gneiss-block-client.adb \
 	   gneiss-block-server.adb \
@@ -67,7 +67,6 @@ vpath cxx-block-client.ads $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath cxx-block-server.ads $(GNEISS_BLOCK_INC_DIR)/server/genode
 vpath cxx-genode.ads $(GNEISS_PLATFORM_DIR)
 vpath gneiss-log-server.ads $(GNEISS_LOG_INC_DIR)/server
-vpath gneiss_internal.ads $(GNEISS_PLATFORM_DIR)
 vpath gneiss_internal-block.ads $(GNEISS_BLOCK_INC_DIR)/genode
 vpath gneiss_internal-log.ads $(GNEISS_LOG_INC_DIR)/genode
 vpath gneiss.ads $(GNEISS_INC_DIR)
@@ -79,6 +78,7 @@ vpath gneiss_internal-memory.ads $(GNEISS_MEMORY_DIR)/genode
 vpath gneiss_internal-message.ads $(GNEISS_MESSAGE_DIR)/genode
 vpath genode.adb $(GNEISS_PLATFORM_DIR)
 vpath cxx-block-dispatcher.adb $(GNEISS_BLOCK_INC_DIR)/server/genode
+vpath gneiss_internal.adb $(GNEISS_PLATFORM_DIR)
 vpath gneiss-block.adb $(GNEISS_BLOCK_INC_DIR)/genode
 vpath gneiss-block-client.adb $(GNEISS_BLOCK_INC_DIR)/client/genode
 vpath gneiss-block-server.adb $(GNEISS_BLOCK_INC_DIR)/server/genode
