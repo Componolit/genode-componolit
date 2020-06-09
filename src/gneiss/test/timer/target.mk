@@ -1,7 +1,8 @@
 TARGET := test-gneiss_timer
-SRC_ADB := component.adb
+SRC_ADS := timer.ads
+SRC_ADB := timer-component.adb
 LIBS := base spark gneiss basalt
 MODULE_DIR = $(REP_DIR)/modules/gneiss/test/timer
 INC_DIR += $(MODULE_DIR)
 CC_ADA_WARN_STRICT ?=
-vpath component.adb $(MODULE_DIR)
+vpath timer% $(MODULE_DIR)
